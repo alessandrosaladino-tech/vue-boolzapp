@@ -48,9 +48,9 @@
                     <div class="col-2 d-flex rounded_avatar d-flex justify-content-center align-items-center">
                         <i class="fa-solid fa-bell-slash " style="color: #8edafc;"></i>
                     </div>
-                    <div class="col-10">
-                        <strong>Ricevi notifiche di nuovi messaggi</strong>
-                        <a href="">Attiva notifiche Desktop</a>
+                    <div class="col-10 d-flex flex-column">
+                        <strong class="font_size_name">Ricevi notifiche di nuovi messaggi</strong>
+                        <a href="#" class="font_size_name">Attiva notifiche Desktop</a>
                     </div>
                 </div><!--Fine area notifiche-->
 
@@ -76,7 +76,7 @@
 
                         <div class="col-10 d-flex flex-column  gap-1">
                             <strong class="font_size_name">{{contact.name}}</strong>
-                            <p class="font_size_access">{{contact.messages[contact.messages.length -1].message}}</p>
+                            <p class="font_size_access">{{contact.messages[contact.messages.length - 1].message}}</p>
                         </div>
                     </div>
                 </div> <!--Fine chat contatti-->
@@ -113,54 +113,53 @@
 
                 <div class="row container_message bg_whats"><!--Area messaggi-->
 
+                    <div class="message_container">
 
-                   
+                        <div v-for="(message,index) in contacts[active].messages" class="col- mb-2"
+                            :class=" message.status === 'sent' ? 'message_sent' : 'message_received' ">
 
-                        <div class="message_container">
-
-                            <div v-for="(message,index) in contacts[active].messages" class="col-6 mb-2"
-                                :class=" message.status === 'sent' ? 'message_sent' : 'message_received' ">
-
-                                <div class="rounded-2 d-flex flex-column"
-                                    :class=" message.status === 'sent' ? 'sent' : 'received' ">
-                                    <div class="flex-grow-1 pt-2 ps-2">
-                                        {{message.message}}
-                                    </div>
-                                    <div class="message_time d-flex justify-content-end">
-                                        {{message.date}}
-                                    </div>
+                            <div class="rounded-2 d-flex flex-column"
+                                :class=" message.status === 'sent' ? 'sent' : 'received' ">
+                                <div class=" pt-2 ps-2 fs_message">
+                                    {{message.message}}
                                 </div>
-
+                                <div class="d-flex justify-content-end fs_time_message">
+                                    {{message.date}}
+                                </div>
                             </div>
 
                         </div>
-                    
+
+                    </div>
 
                 </div><!--Fine area messaggi-->
 
 
-                <div class="row bg_right_footer footer_message align-items-center">
-                    <div class="container d-flex align-items-center">
-                        <div class="col-1 d-flex align-items-center">
-                            <i class="fa-regular fa-face-smile" style="color: #b1b1b1;"></i>
-                        </div>
-                        <div class="col-10 ">
-                            <div class="input-group mb-3">
-                                <input type="text" class="form-control" placeholder="Send a message!"
-                                    aria-label="Recipient's username" aria-describedby="button-addon2">
-                                <button class="btn btn-outline-secondary" type="button" id="button-addon2">
-                                    <i class="fa-regular fa-paper-plane" style="color: #b1b1b1;"></i>
-                                </button>
-                            </div>
-                        </div>
-                        <div class="col-1">
-                            <i class="fa-solid fa-microphone" style="color: #b1b1b1;"></i>
-                        </div>
-                    </div>
+                <div class=" bg_right_footer d-flex footer_message align-items-center justify-content-around gap-4">
+                    <!--Inizio footer messaggi-->
 
-                </div>
+                    <button class="border border-0 bg_right">
+                        <i class="fa-regular fa-face-smile " style="color: #b1b1b1;"></i>
+                    </button>
+
+                    <div class="flex-grow-1 py-2 h-100">
+                        <input type="text" placeholder="Send a message!"
+                            class="w-100 h-100 border-0 rounded-2 px-2 border border-secondary">
+                    </div>
+                    
+                    <button class="border border-0 bg_right">
+                        <i class="fa-solid fa-location-arrow " style="color: #b1b1b1;"></i>
+                    </button>
+
+                    <button class="border border-0 bg_right">
+                        <i class="fa-solid fa-microphone" style="color: #b1b1b1;"></i>
+                    </button>
+
+                </div><!--Fine footer messaggi-->
+
             </div>
-        </div><!--Fine parte di destra-->
+        </div>
+    </div><!--Fine parte di destra-->
     </div>
 
     </div><!--Fine row generale-->

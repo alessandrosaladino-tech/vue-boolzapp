@@ -8,6 +8,8 @@ body {
     background-color: beige;
 }
 
+/* COLOR SECTION */
+
 :root {
     --bz-white: #fff;
     --bz-white-soft: #fafafa;
@@ -18,17 +20,55 @@ body {
     --bz-success: #009688;
     --bz-communications: #8edafc;
     --bz-communications-soft: #f2fbff;
+    --bz-sent-message: #DCF8C0;
 }
 
 .bg_left {
     background-color: var(--bz-white-soft);
-    
+
 }
 
 .bg_right {
-    background-color: var(--bz-white);
-   
+    background-color: var(--bz-light);
+
 }
+
+.bg_card_top {
+    background-color: var(--bz-light);
+    border: 0.1px solid var(--bz-dark);
+}
+
+.bg_friend {
+    background-color: var(--bz-white);
+}
+
+.bg_card_notif {
+    background-color: var(--bz-communications);
+}
+
+.bg_whats {
+    background-image: url(../img/mine_480.jpg);
+}
+
+.bg_right_footer {
+    background-color: var(--bz-light);
+}
+
+.sent {
+    background-color: var(--bz-sent-message);
+}
+
+.received {
+    background-color: var(--bz-light);
+}
+
+/*END COLOR SECTION */
+
+
+
+
+
+/*COMMON SECTION */
 
 .avatar {
     width: 50px;
@@ -47,27 +87,6 @@ body {
     background-size: cover;
 }
 
-.bg_card_top {
-    background-color: var(--bz-light);
-    border: 1px solid;
-}
-
-.bg_friend {
-    background-color: var(--bz-white);
-}
-
-.bg_card_notif {
-    background-color: var(--bz-communications);
-}
-
-.bg_whats{
-    background-image: url(../img/mine_480.jpg);
-   }
-
-.bg_right_footer{
-    background-color: var(--bz-light);
-}
-
 .rounded_avatar {
 
     width: 50px;
@@ -77,37 +96,40 @@ body {
     background-size: auto;
 }
 
-.container_big{
+.container_big {
     height: 750px;
 }
 
-.height_100{
+.height_100 {
     height: 100%;
 }
 
-.font_size_name{
+.font_size_name {
     font-size: 12px;
 }
 
-.font_size_access{
+.font_size_access {
     font-size: 8px;
 }
 
-.container_message{
+
+/*END COMMON SECTION*/
+
+
+
+
+
+
+
+/*MESSAGE SECTION */
+
+.container_message {
     height: 85%;
 }
 
 .footer_message {
     height: 6.45%;
-  
-}
 
-.sent {
-    background-color: green;
-}
-
-.received {
-    background-color: white;
 }
 
 .message_container {
@@ -116,10 +138,10 @@ body {
 }
 
 .message_sent {
-  display: flex;
-  width: 100%;
-  justify-content: end;
-  padding: 1rem;
+    display: flex;
+    width: 100%;
+    justify-content: end;
+    padding: 1rem;
 }
 
 .message_received {
@@ -128,3 +150,23 @@ body {
     justify-content: start;
     padding: 1rem;
 }
+
+.fs_message {
+    font-size: 11px;
+    width: 300px;
+}
+
+.fs_time_message {
+    font-size: 9px;
+    width: 300px;
+    color: var(--bz-dark-soft);
+}
+
+
+input:focus {
+    outline: none !important;
+    border-color: var(--bz-success);
+    box-shadow: 0 0 10px var(--bz-success);
+}
+
+/*END MESSAGE SECTION*/

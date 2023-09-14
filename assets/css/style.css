@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,14 +8,14 @@ body {
     background-color: beige;
 }
 
-.bg_red{
+.bg_red {
     background-color: brown;
-    height: 200px;
+    
 }
 
-.bg_blue{
+.bg_blue {
     background-color: blue;
-    height: 200px;
+   
 }
 
 .avatar {
@@ -24,11 +24,39 @@ body {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-   
+
 }
 
 .resize {
-   max-width: 50px;
-   max-height: 50px;
-   border-radius: 50%;
+    max-width: 40px;
+    max-height: 40px;
+    border-radius: 50%;
+    background-color: white;
+    background-size: cover;
+}
+
+.bg_card_top {
+    background-color: rgb(181, 181, 178);
+    border: 1px solid;
+}
+
+.bg_card_notif {
+    background-color: aquamarine;
+}
+
+.rounded_avatar {
+
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: white;
+    background-size: auto;
+}
+
+.container_big{
+    height: 1000px;
+}
+
+.height_100{
+    height: 100%;
 }

@@ -18,24 +18,56 @@
 
 <body>
 
-    <div class="container pt-5">
-        <div class="row">
-            <div class="col-4 bg_red">
+    <div id="app" class="container pt-5 container_big">
+        <div class="row height_100">
+            <div class="col-4 bg_red"> <!--Inizio parte sinistra-->
 
-                <div class="row align-items-center p-2">
-                    <div class="col-2">
+                <div class="row align-items-center p-2 justify-content-around bg_card_top"> <!--Row contatti/utente-->
+                    <div class="col-6 d-flex align-items-center gap-3">
                         <img src="./assets/img/avatar_1_360.jpg" class="resize">
+                        <strong class="">Alessandro</strong>
                     </div>
-                    <div class="col-4">
-                        <p>Alessandro</p>
-                    </div>
-                    <div class="col-6">
+
+
+                    <div class="col-6 d-flex justify-content-end gap-3">
                         <i class="fa-solid fa-circle-notch" style="color: #a3a3a3;"></i>
                         <i class="fa-solid fa-message" style="color: #9fa2a8;"></i>
                         <i class="fa-solid fa-ellipsis-vertical" style="color: #a6a8ab;"></i>
                     </div>
+                </div> <!--Fine info utente-->
 
-                </div>
+
+                <!--Area notifiche-->
+                <div class="row align-items-center p-2 justify-content-start bg_card_notif">
+                    <div class="col-2 d-flex rounded_avatar d-flex justify-content-center align-items-center">
+                        <i class="fa-solid fa-bell-slash " style="color: #d3d7de;"></i>
+                    </div>
+                    <div class="col-10">
+                        <strong>Ricevi notifiche di nuovi messaggi</strong>
+                        <a href="">Attiva notifiche Desktop</a>
+                    </div>
+                </div><!--Fine area notifiche-->
+
+                <!--Inizio area ricerca contatti-->
+                <div class="row align-items-center p-2 justify-content-around bg_card_top">
+                    <div class="input-group gap-1">
+                        <button class="btn " type="button" id="button-addon1">
+                            <i class="fa-solid fa-magnifying-glass" style="color: #ffffff;" ></i>
+                        </button>
+                        <input type="text" class="form-control" placeholder="Cerca e inizia una nuova chat" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                      </div>
+                </div> <!--Fine area ricerca contatti-->
+
+                <!--Inizio chat contatti-->
+                <div class="row align-items-center p-2 justify-content-start bg_card_top" v-for="(contact, index) in contacts"> <!--Row contatti/utente-->
+                    <div class="col-6 d-flex align-items-center gap-3">
+                        <img v-bind:src="contact.avatar" class="resize">
+                        <strong class="">{{contact.name}}</strong>
+                    </div>
+                </div> <!--Fine chat contatti-->
+
+                <!--Fine parte sinistra-->
+
             </div>
             <div class="col-8 bg_blue"></div>
         </div>
@@ -43,7 +75,7 @@
 
 
 
-
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
     <script src="./assets/js/main.js"></script>
 

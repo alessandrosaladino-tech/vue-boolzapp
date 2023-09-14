@@ -18,21 +18,27 @@
 
 <body>
 
-    <div id="app" class="container pt-5 container_big">
-        <div class="row height_100">
-            <div class="col-4 bg_red"> <!--Inizio parte sinistra-->
+    <div id="app" class="container pt-5 container_big mb-5">
 
-                <div class="row align-items-center p-2 justify-content-around bg_card_top"> <!--Row contatti/utente-->
+        <div class="row height_100"><!--inizio row-->
+
+
+
+            <!--PARTE SINISTRA-->
+
+            <div class="col-4 bg_left"> <!--Inizio parte sinistra-->
+
+                <div class="row align-items-center p-1 justify-content-around bg_card_top"> <!--Row contatti/utente-->
                     <div class="col-6 d-flex align-items-center gap-3">
-                        <img src="./assets/img/avatar_1_360.jpg" class="resize">
+                        <img src="./assets/img/avatar_io_360.jpg" class="resize">
                         <strong class="">Alessandro</strong>
                     </div>
 
 
                     <div class="col-6 d-flex justify-content-end gap-3">
-                        <i class="fa-solid fa-circle-notch" style="color: #a3a3a3;"></i>
-                        <i class="fa-solid fa-message" style="color: #9fa2a8;"></i>
-                        <i class="fa-solid fa-ellipsis-vertical" style="color: #a6a8ab;"></i>
+                        <i class="fa-solid fa-circle-notch" style="color: #b1b1b1;"></i>
+                        <i class="fa-solid fa-message" style="color: #b1b1b1;"></i>
+                        <i class="fa-solid fa-ellipsis-vertical" style="color: #b1b1b1;"></i>
                     </div>
                 </div> <!--Fine info utente-->
 
@@ -40,7 +46,7 @@
                 <!--Area notifiche-->
                 <div class="row align-items-center p-2 justify-content-start bg_card_notif">
                     <div class="col-2 d-flex rounded_avatar d-flex justify-content-center align-items-center">
-                        <i class="fa-solid fa-bell-slash " style="color: #d3d7de;"></i>
+                        <i class="fa-solid fa-bell-slash " style="color: #8edafc;"></i>
                     </div>
                     <div class="col-10">
                         <strong>Ricevi notifiche di nuovi messaggi</strong>
@@ -49,28 +55,90 @@
                 </div><!--Fine area notifiche-->
 
                 <!--Inizio area ricerca contatti-->
-                <div class="row align-items-center p-2 justify-content-around bg_card_top">
+                <div class="row align-items-center p-2 justify-content-around bg_friend">
                     <div class="input-group gap-1">
                         <button class="btn " type="button" id="button-addon1">
-                            <i class="fa-solid fa-magnifying-glass" style="color: #ffffff;" ></i>
+                            <i class="fa-solid fa-magnifying-glass" style="color: #b1b1b1;"></i>
                         </button>
-                        <input type="text" class="form-control" placeholder="Cerca e inizia una nuova chat" aria-label="Example text with button addon" aria-describedby="button-addon1">
-                      </div>
+                        <input type="text" class="form-control" placeholder="Cerca e inizia una nuova chat"
+                            aria-label="Example text with button addon" aria-describedby="button-addon1">
+                    </div>
                 </div> <!--Fine area ricerca contatti-->
 
                 <!--Inizio chat contatti-->
-                <div class="row align-items-center p-2 justify-content-start bg_card_top" v-for="(contact, index) in contacts"> <!--Row contatti/utente-->
-                    <div class="col-6 d-flex align-items-center gap-3">
+                <div class="row align-items-center p-1 justify-content-start bg_friend"
+                    v-for="(contact, index) in contacts"> <!--Row contatti/utente-->
+                    <div class="col-2 d-flex align-items-center gap-3">
                         <img v-bind:src="contact.avatar" class="resize">
-                        <strong class="">{{contact.name}}</strong>
+                    </div>
+
+                    <div class="col-10 d-flex flex-column  gap-1">
+                        <strong class="font_size_name">{{contact.name}}</strong>
+                        <p class="font_size_access">Ultimo accesso oggi alle 12:00</p>
                     </div>
                 </div> <!--Fine chat contatti-->
 
-                <!--Fine parte sinistra-->
 
+
+            </div> <!--Fine parte sinistra-->
+
+
+
+
+            <!--PARTE DESTRA-->
+
+            <div class="col-8 bg_right"><!--Inizio parte destra-->
+                <div class="row align-items-center p-1  justify-content-around bg_card_top">
+                    <!--Row messaggioUtente top-->
+                    <div class="col-1 d-flex align-items-center gap-3">
+                        <img src="./assets/img/avatar_io_360.jpg" class="resize">
+
+                    </div>
+                    <div class="col-5 d-flex flex-column  gap-1">
+                        <strong class="font_size_name">Michele</strong>
+                        <p class="font_size_access">Ultimo accesso oggi alle 12:00</p>
+                    </div>
+
+
+                    <div class="col-6 d-flex justify-content-end gap-3">
+                        <i class="fa-solid fa-magnifying-glass" style="color: #b1b1b1;"></i>
+                        <i class="fa-solid fa-paperclip" style="color: #b1b1b1;"></i>
+                        <i class="fa-solid fa-ellipsis-vertical" style="color: #b1b1b1;"></i>
+                    </div>
+                </div><!-- fine Row messaggioUtente top-->
+
+                <div class="row container_message bg_whats"><!--Area messaggi-->
+
+
+
+                </div><!--Fine area messaggi-->
+
+
+                <div class="row bg_right_footer footer_message align-items-center">
+                    <div class="container d-flex align-items-center">
+                        <div class="col-1 d-flex align-items-center">
+                            <i class="fa-regular fa-face-smile" style="color: #b1b1b1;"></i>
+                        </div>
+                        <div class="col-10 ">
+                            <div class="input-group mb-3">
+                                <input type="text" class="form-control" placeholder="Send a message!"
+                                    aria-label="Recipient's username" aria-describedby="button-addon2">
+                                <button class="btn btn-outline-secondary" type="button" id="button-addon2">
+                                    <i class="fa-regular fa-paper-plane" style="color: #b1b1b1;"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-1">
+                            <i class="fa-solid fa-microphone" style="color: #b1b1b1;"></i>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-            <div class="col-8 bg_blue"></div>
-        </div>
+        </div><!--Fine parte di destra-->
+    </div>
+
+    </div><!--Fine row generale-->
     </div>
 
 

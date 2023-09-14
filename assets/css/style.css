@@ -8,13 +8,25 @@ body {
     background-color: beige;
 }
 
-.bg_red {
-    background-color: brown;
+:root {
+    --bz-white: #fff;
+    --bz-white-soft: #fafafa;
+    --bz-light: #eaeaea;
+    --bz-light-soft: #d9dbd4;
+    --bz-dark: #6b7376;
+    --bz-dark-soft: #b1b1b1;
+    --bz-success: #009688;
+    --bz-communications: #8edafc;
+    --bz-communications-soft: #f2fbff;
+}
+
+.bg_left {
+    background-color: var(--bz-white-soft);
     
 }
 
-.bg_blue {
-    background-color: blue;
+.bg_right {
+    background-color: var(--bz-white);
    
 }
 
@@ -28,20 +40,32 @@ body {
 }
 
 .resize {
-    max-width: 40px;
-    max-height: 40px;
+    max-width: 50px;
+    max-height: 50px;
     border-radius: 50%;
     background-color: white;
     background-size: cover;
 }
 
 .bg_card_top {
-    background-color: rgb(181, 181, 178);
+    background-color: var(--bz-light);
     border: 1px solid;
 }
 
+.bg_friend {
+    background-color: var(--bz-white);
+}
+
 .bg_card_notif {
-    background-color: aquamarine;
+    background-color: var(--bz-communications);
+}
+
+.bg_whats{
+    background-image: url(../img/mine_480.jpg);
+   }
+
+.bg_right_footer{
+    background-color: var(--bz-light);
 }
 
 .rounded_avatar {
@@ -54,9 +78,27 @@ body {
 }
 
 .container_big{
-    height: 1000px;
+    height: 750px;
 }
 
 .height_100{
     height: 100%;
 }
+
+.font_size_name{
+    font-size: 12px;
+}
+
+.font_size_access{
+    font-size: 8px;
+}
+
+.container_message{
+    height: 85%;
+}
+
+.footer_message {
+    height: 6.45%;
+  
+}
+

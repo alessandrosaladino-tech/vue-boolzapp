@@ -212,7 +212,7 @@ createApp({
             console.log(newSendedMessage),
             this.newSendedMessage = ""
 
-            setAutoMessage = setInterval(this.autoAnswer, 1000)
+            setAutoMessage = setTimeout(this.autoAnswer, 1000)
         },
 
         autoAnswer(){

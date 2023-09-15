@@ -37,7 +37,7 @@ body {
 .bg_right {
     background-color: var(--bz-light);
     height: 100%;
-    flex-grow: 3;
+    flex-grow: 1;
 
 }
 

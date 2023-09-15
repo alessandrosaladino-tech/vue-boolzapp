@@ -6,11 +6,11 @@
 
 body {
     background-image: linear-gradient(to bottom, var(--bz-success) 0, var(--bz-success) 140px, var(--bz-light-soft) 140px, var(--bz-light-soft) 100%);
-    overflow: hidden;
+    height: 100vh;
 }
 
 #app {
-    height: 100vh;
+    height: 60vh;
 }
 /* COLOR SECTION */
 
@@ -37,7 +37,7 @@ body {
 .bg_right {
     background-color: var(--bz-light);
     height: 100%;
-    flex-grow: 1;
+    flex-grow: 3;
 
 }
 
@@ -135,7 +135,8 @@ body {
 /*MESSAGE SECTION */
 
 .container_message {
-    height: 85%;
+    height: 100%;
+    overflow: auto;
 }
 
 .footer_message {
@@ -185,4 +186,9 @@ input:focus {
 .contacts{
     overflow-y: auto;
     height: calc(100% - 220px);
+}
+
+.message_wrap {
+    overflow-y: auto;
+    height: 100%;
 }

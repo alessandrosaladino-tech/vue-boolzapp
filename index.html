@@ -55,7 +55,7 @@
                 </div><!--Fine area notifiche-->
 
                 <!--Inizio area ricerca contatti-->
-                <div class="row align-items-center p-2 justify-content-around bg_friend">
+                <div class="row align-items-center p-2 justify-content-around bg_friend ">
                     <div class="input-group gap-1">
                         <button class="btn " type="button" id="button-addon1">
                             <i class="fa-solid fa-magnifying-glass" style="color: #b1b1b1;"></i>
@@ -63,23 +63,27 @@
                         <input type="text" class="form-control" placeholder="Cerca e inizia una nuova chat"
                             aria-label="Example text with button addon" aria-describedby="button-addon1">
                     </div>
-                </div> <!--Fine area ricerca contatti-->
+                </div>
+                <!--Fine area ricerca contatti-->
 
                 <!--Inizio chat contatti-->
-                <div class="row align-items-center p-1 justify-content-start bg_friend"
-                    v-for="(contact, index) in contacts" @click="activeContact(index)"><!--Row contatti/utente-->
+                <div class="contacts">
+                    <div class="row align-items-center p-1 justify-content-start bg_friend"
+                        v-for="(contact, index) in contacts" @click="activeContact(index)"><!--Row contatti/utente-->
 
-                    <div class="container d-flex" :class="active == index ? 'bg_card_top' : '' ">
-                        <div class="col-2 d-flex align-items-center gap-3">
-                            <img v-bind:src="contact.avatar" class="resize">
-                        </div>
+                        <div class="container d-flex" :class="active == index ? 'bg_card_top' : '' ">
+                            <div class="col-2 d-flex align-items-center gap-3">
+                                <img v-bind:src="contact.avatar" class="resize">
+                            </div>
 
-                        <div class="col-10 d-flex flex-column  gap-1">
-                            <strong class="font_size_name">{{contact.name}}</strong>
-                            <p class="font_size_access">{{contact.messages[contact.messages.length - 1].message}}</p>
+                            <div class="col-10 d-flex flex-column  gap-1">
+                                <strong class="font_size_name">{{contact.name}}</strong>
+                                <p class="font_size_access">{{contact.messages[contact.messages.length - 1].message}}
+                                </p>
+                            </div>
                         </div>
                     </div>
-                </div> <!--Fine chat contatti-->
+                </div><!--Fine chat contatti-->
 
 
 
@@ -146,7 +150,7 @@
                         <input type="text" placeholder="Send a message!"
                             class="w-100 h-100 border-0 rounded-2 px-2 border border-secondary">
                     </div>
-                    
+
                     <button class="border border-0 bg_right">
                         <i class="fa-solid fa-location-arrow " style="color: #b1b1b1;"></i>
                     </button>

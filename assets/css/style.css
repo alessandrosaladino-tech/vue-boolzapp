@@ -5,9 +5,13 @@
 }
 
 body {
-    background-color: beige;
+    background-image: linear-gradient(to bottom, var(--bz-success) 0, var(--bz-success) 140px, var(--bz-light-soft) 140px, var(--bz-light-soft) 100%);
+    overflow: hidden;
 }
 
+#app {
+    height: 100vh;
+}
 /* COLOR SECTION */
 
 :root {
@@ -25,11 +29,15 @@ body {
 
 .bg_left {
     background-color: var(--bz-white-soft);
+    height: 100%;
+    flex-grow: 1;
 
 }
 
 .bg_right {
     background-color: var(--bz-light);
+    height: 100%;
+    flex-grow: 3;
 
 }
 
@@ -40,6 +48,7 @@ body {
 
 .bg_friend {
     background-color: var(--bz-white);
+    width: 100%;
 }
 
 .bg_card_notif {
@@ -101,7 +110,9 @@ body {
 }
 
 .height_100 {
-    height: 100%;
+    height: calc(100% - 64px);
+    flex-wrap: wrap;
+    max-width: 1200px;
 }
 
 .font_size_name {
@@ -170,3 +181,8 @@ input:focus {
 }
 
 /*END MESSAGE SECTION*/
+
+.contacts{
+    overflow-y: auto;
+    height: calc(100% - 220px);
+}

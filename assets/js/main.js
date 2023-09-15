@@ -1,8 +1,21 @@
 /*
 
-Milestone 1
+Milestone 1 ✅
 - Replica della grafica con la possibilità di avere messaggi scritti dall'utente (verdi) e dall'interlocutore (bianco) assegnando due classi CSS diverse
 - Visualizzazione dinamica della lista contatti: tramite la direttiva v-for, visualizzare nome e immagine di ogni contatto
+
+
+Milestone 2 ✅
+● Visualizzazione dinamica dei messaggi: tramite la direttiva v-for, visualizzare tutti i
+messaggi relativi al contatto attivo all’interno del pannello della conversazione
+● Click sul contatto mostra la conversazione del contatto cliccato
+
+
+Milestone 3
+● Aggiunta di un messaggio: l’utente scrive un testo nella parte bassa e digitando
+“enter” il testo viene aggiunto al thread sopra, come messaggio verde
+● Risposta dall’interlocutore: ad ogni inserimento di un messaggio, l’utente riceverà
+
 
 */
 
@@ -14,6 +27,8 @@ createApp({
         return {
 
             active: 0,
+
+            newSendedMessage: "",
 
             contacts: [
                 {
@@ -185,6 +200,31 @@ createApp({
             this.active = index;
         },
 
-        
+        sendMessage(newSendedMessage) {
+
+            this.contacts[this.active].messages.push(
+                {
+                    date: "10/01/2020 15:51:00",
+                    message: this.newSendedMessage,
+                    status: 'sent'
+                }
+            )
+            console.log(newSendedMessage),
+            this.newSendedMessage = ""
+
+            setAutoMessage = setInterval(this.autoAnswer, 1000)
+        },
+
+        autoAnswer(){
+            this.contacts[this.active].messages.push(
+                {
+                    date: "10/01/2020 15:51:00",
+                    message: "Ok!!",
+                    status: "received"
+                }
+            )
+        }
+
+
     }
 }).mount('#app');

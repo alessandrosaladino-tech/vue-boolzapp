@@ -34,6 +34,8 @@ createApp({
 
             newSendedMessage: "",
 
+            search: "",
+
             contacts: [
                 {
                     name: 'Michele',
@@ -227,7 +229,22 @@ createApp({
                     status: "received"
                 }
             )
-        }
+        },
+
+        filterSearch() {
+
+            this.contacts.forEach( (friend,index) => {
+                
+                if (this.contacts[index].name.toLowerCase().includes(this.search.toLowerCase())) {
+
+                    this.contacts[index].visible = true
+
+                } else {
+                    this.contacts[index].visible = false
+                }
+
+            })
+        },
 
 
     }

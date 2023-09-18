@@ -178,12 +178,12 @@ body {
 
 .fs_message {
     font-size: 11px;
-    width: 300px;
+   /* width: 300px; */
 }
 
 .fs_time_message {
     font-size: 9px;
-    width: 300px;
+   /* width: 300px; */
     color: var(--bz-dark-soft);
 }
 

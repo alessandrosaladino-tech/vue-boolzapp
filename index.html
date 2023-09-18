@@ -26,76 +26,77 @@
 
             <!--PARTE SINISTRA-->
 
-                <div class="col-4 bg_left"> <!--Inizio parte sinistra-->
+            <div class="col-4 bg_left"> <!--Inizio parte sinistra-->
 
-                    <div class="row align-items-center p-1 justify-content-around bg_card_top">
-                        <!--Row contatti/utente-->
-                        <div class="col-6 d-flex align-items-center gap-3">
-                            <img src="./assets/img/avatar_io_360.jpg" class="resize">
-                            <strong class="">Alessandro</strong>
-                        </div>
-
-
-                        <div class="col-6 d-flex justify-content-end gap-3">
-                            <i class="fa-solid fa-circle-notch" style="color: #b1b1b1;"></i>
-                            <i class="fa-solid fa-message" style="color: #b1b1b1;"></i>
-                            <i class="fa-solid fa-ellipsis-vertical" style="color: #b1b1b1;"></i>
-                        </div>
-                    </div> <!--Fine info utente-->
-
-
-                    <!--Area notifiche-->
-                    <div class="row align-items-center p-2 justify-content-start bg_card_notif p-m-adjust">
-                        <div class="col-2 d-flex rounded_avatar d-flex justify-content-center align-items-center">
-                            <i class="fa-solid fa-bell-slash " style="color: #8edafc;"></i>
-                        </div>
-                        <div class="col-10 d-flex flex-column">
-                            <strong class="font_size_name">Ricevi notifiche di nuovi messaggi</strong>
-                            <a href="#" class="font_size_name">Attiva notifiche Desktop</a>
-                        </div>
-                    </div><!--Fine area notifiche-->
-
-                    <!--Inizio area ricerca contatti-->
-                    <div class="row align-items-center p-2 justify-content-around bg_friend p-m-adjust">
-                        <div class="input-group gap-1">
-                            <button class="btn " type="button" id="button-addon1" >
-                                <i class="fa-solid fa-magnifying-glass" style="color: #b1b1b1;"></i>
-                            </button>
-                            <input type="text" class="form-control" v-model="search"  @keyup="filterSearch()" placeholder="Cerca e inizia una nuova chat"
-                                aria-label="Example text with button addon" aria-describedby="button-addon1">
-                        </div>
+                <div class="row align-items-center p-1 justify-content-around bg_card_top">
+                    <!--Row contatti/utente-->
+                    <div class="col-6 d-flex align-items-center gap-3">
+                        <img src="./assets/img/avatar_io_360.jpg" class="resize">
+                        <strong class="">Alessandro</strong>
                     </div>
-                    <!--Fine area ricerca contatti-->
 
-                    <!--Inizio chat contatti-->
 
-                    <div class="contacts">
-                        <div class="row align-items-center p-1 justify-content-start bg_friend m-0"
-                            v-for="(contact, index) in contacts" @click="activeContact(index)">
-                            <!--Row contatti/utente-->
+                    <div class="col-6 d-flex justify-content-end gap-3">
+                        <i class="fa-solid fa-circle-notch" style="color: #b1b1b1;"></i>
+                        <i class="fa-solid fa-message" style="color: #b1b1b1;"></i>
+                        <i class="fa-solid fa-ellipsis-vertical" style="color: #b1b1b1;"></i>
+                    </div>
+                </div> <!--Fine info utente-->
 
-                            <div class="d-flex" v-if="contact.visible" :class="active == index ? 'bg_card_top' : '' ">
-                                <div class="col-2 d-flex align-items-center gap-3">
-                                    <img v-bind:src="contact.avatar" class="resize">
-                                </div>
 
-                                <div class="col-10 d-flex flex-column  gap-1">
-                                    <strong class="font_size_name">{{contact.name}}</strong>
-                                    <p class="font_size_access">{{contact.messages[contact.messages.length -
-                                        1].message}}
-                                    </p>
-                                </div>
+                <!--Area notifiche-->
+                <div class="row align-items-center p-2 justify-content-start bg_card_notif p-m-adjust">
+                    <div class="col-2 d-flex rounded_avatar d-flex justify-content-center align-items-center">
+                        <i class="fa-solid fa-bell-slash " style="color: #8edafc;"></i>
+                    </div>
+                    <div class="col-10 d-flex flex-column">
+                        <strong class="font_size_name">Ricevi notifiche di nuovi messaggi</strong>
+                        <a href="#" class="font_size_name">Attiva notifiche Desktop</a>
+                    </div>
+                </div><!--Fine area notifiche-->
+
+                <!--Inizio area ricerca contatti-->
+                <div class="row align-items-center p-2 justify-content-around bg_friend p-m-adjust">
+                    <div class="input-group gap-1">
+                        <button class="btn " type="button" id="button-addon1">
+                            <i class="fa-solid fa-magnifying-glass" style="color: #b1b1b1;"></i>
+                        </button>
+                        <input type="text" class="form-control" v-model="search" @keyup="filterSearch()"
+                            placeholder="Cerca e inizia una nuova chat" aria-label="Example text with button addon"
+                            aria-describedby="button-addon1">
+                    </div>
+                </div>
+                <!--Fine area ricerca contatti-->
+
+                <!--Inizio chat contatti-->
+
+                <div class="contacts">
+                    <div class="row align-items-center p-1 justify-content-start bg_friend m-0"
+                        v-for="(contact, index) in contacts" @click="activeContact(index)">
+                        <!--Row contatti/utente-->
+
+                        <div class="d-flex" v-if="contact.visible" :class="active == index ? 'bg_card_top' : '' ">
+                            <div class="col-2 d-flex align-items-center gap-3">
+                                <img v-bind:src="contact.avatar" class="resize">
+                            </div>
+
+                            <div class="col-10 d-flex flex-column  gap-1">
+                                <strong class="font_size_name">{{contact.name}}</strong>
+                                <p class="font_size_access">{{contact.messages[contact.messages.length -
+                                    1].message}}
+                                </p>
                             </div>
                         </div>
                     </div>
+                </div>
 
-                    <!--Fine chat contatti-->
+                <!--Fine chat contatti-->
 
 
 
-                </div> 
-                
-                <!--FINE PARTE SINISTRA-->
+            </div>
+
+            <!--FINE PARTE SINISTRA-->
 
 
 
@@ -129,7 +130,7 @@
 
                     <div class="message_container">
 
-                        <div v-for="(message,index) in contacts[active].messages" class="col- mb-2"
+                        <div v-for="(message,index) in contacts[active].messages" class="col-12 mb-2"
                             :class=" message.status === 'sent' ? 'message_sent' : 'message_received' ">
 
                             <div class="rounded-2 d-flex flex-column"
@@ -159,11 +160,13 @@
 
                     <div class="flex-grow-1 py-2 h-100">
                         <input type="text" placeholder="Send a message!"
-                            class="w-100 h-100 border-0 rounded-2 px-2 border border-secondary" v-model="newSendedMessage" @keyup.enter="sendMessage(newSendedMessage)">
+                            class="w-100 h-100 border-0 rounded-2 px-2 border border-secondary"
+                            v-model="newSendedMessage" @keyup.enter="sendMessage(newSendedMessage)">
                     </div>
 
                     <button class="border border-0 ">
-                        <i class="fa-solid fa-location-arrow " @click="sendMessage(newSendedMessage)" style="color: #b1b1b1;"></i>
+                        <i class="fa-solid fa-location-arrow " @click="sendMessage(newSendedMessage)"
+                            style="color: #b1b1b1;"></i>
                     </button>
 
                     <button class="border border-0 ">

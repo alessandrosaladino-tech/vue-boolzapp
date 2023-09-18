@@ -31,6 +31,7 @@ permette di cancellare il messaggio selezionato
 
 const { createApp } = Vue;
 
+
 createApp({
     data() {
         return {
@@ -229,7 +230,7 @@ createApp({
         autoAnswer(){
             this.contacts[this.active].messages.push(
                 {
-                    date: "10/01/2020 15:51:00",
+                    date: '10/01/2020 15:51:00',
                     message: "Ok!!",
                     status: "received"
                 }

@@ -45,7 +45,7 @@
 
 
                     <!--Area notifiche-->
-                    <div class="row align-items-center p-2 justify-content-start bg_card_notif">
+                    <div class="row align-items-center p-2 justify-content-start bg_card_notif p-m-adjust">
                         <div class="col-2 d-flex rounded_avatar d-flex justify-content-center align-items-center">
                             <i class="fa-solid fa-bell-slash " style="color: #8edafc;"></i>
                         </div>
@@ -56,7 +56,7 @@
                     </div><!--Fine area notifiche-->
 
                     <!--Inizio area ricerca contatti-->
-                    <div class="row align-items-center p-2 justify-content-around bg_friend ">
+                    <div class="row align-items-center p-2 justify-content-around bg_friend p-m-adjust">
                         <div class="input-group gap-1">
                             <button class="btn " type="button" id="button-addon1">
                                 <i class="fa-solid fa-magnifying-glass" style="color: #b1b1b1;"></i>
@@ -70,7 +70,7 @@
                     <!--Inizio chat contatti-->
 
                     <div class="contacts">
-                        <div class="row align-items-center p-1 justify-content-start bg_friend"
+                        <div class="row align-items-center p-1 justify-content-start bg_friend m-0"
                             v-for="(contact, index) in contacts" @click="activeContact(index)">
                             <!--Row contatti/utente-->
 
@@ -104,7 +104,7 @@
 
             <div class="col-8 bg_right d-flex flex-column"><!--Inizio parte destra-->
 
-                <div class="row align-items-center p-1  justify-content-around bg_card_top">
+                <div class="row align-items-center p-1  justify-content-around bg_card_top border_left_card_right">
                     <!--Row messaggioUtente top-->
                     <div class="col-1 d-flex align-items-center gap-3">
                         <img :src="contacts[active].avatar" class="resize">
@@ -125,7 +125,7 @@
 
                 <!--Area messaggi-->
 
-                <div class="row container_message bg_whats">
+                <div class="row container_message bg_whats p-m-adjust">
 
                     <div class="message_container">
 

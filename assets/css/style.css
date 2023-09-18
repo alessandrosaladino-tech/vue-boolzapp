@@ -31,6 +31,7 @@ body {
     background-color: var(--bz-white-soft);
     height: 100%;
     flex-grow: 1;
+    padding: 0;
 
 }
 
@@ -38,12 +39,14 @@ body {
     background-color: var(--bz-light);
     height: 100%;
     flex-grow: 3;
+    padding: 0;
 
 }
 
 .bg_card_top {
     background-color: var(--bz-light);
-    border: 0.1px solid var(--bz-dark);
+    width: 100%;
+    margin: 0;
 }
 
 .bg_friend {
@@ -121,6 +124,16 @@ body {
 
 .font_size_access {
     font-size: 8px;
+}
+
+.p-m-adjust {
+    width: 100%;
+    margin: 0;
+
+}
+
+.border_left_card_right{
+    border-left: 1px solid var(--bz-dark);
 }
 
 
